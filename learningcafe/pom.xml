@@ -12,7 +12,13 @@
 		<spring.version>5.0.1.RELEASE</spring.version>
 	</properties>
 	<dependencies>
+		<!-- Linking back end project -->
+		<dependency>
+			<groupId>com</groupId>
+			<artifactId>cafebackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 
+		</dependency>
 		<!-- Java EE API -->
 		<!-- javaee-api -->
 		<dependency>
@@ -27,7 +33,7 @@
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
-			</dependency>
+		</dependency>
 
 
 		<!-- JUnit -->
@@ -37,13 +43,13 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		
-	<!-- spring-webmvc -->	
+
+		<!-- spring-webmvc -->
 		<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-webmvc</artifactId>
-    <version>${spring.version}</version>
-</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 
 	</dependencies>
 	<build>
