@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -6,9 +7,7 @@
 <spring:url var="js" value="/resources/js" />
 <spring:url var="images" value="/resources/images" />
 
-
 <c:set var="contextRoot" value="${pageContext.request.contextPath }"></c:set>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,18 +20,19 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>LearningCafe -${title}</title>
+<title>${title} | LearningCafe</title>
 <script>
 	window.menu = '${titile}';
 </script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
-
+<link href="${css}/bootstrap-theme.css" rel="stylesheet">
 <!-- Custom styles for this template -->
-<link href="${css }/shop-homepage.css" rel="stylesheet">
-<link href="${css }/spacelab-theme.css" rel="stylesheet">
+<link href="${css }/myapp.css" rel="stylesheet">
+
 </head>
+
 
 <body>
 	<div class="wrapper">
@@ -50,17 +50,21 @@
 			<c:if test="${userClickContact == true}">
 				<%@include file="contact.jsp"%>
 			</c:if>
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts==true}">
+			<c:if test="${userClickCategoryProducts == true or userClickAllProducts == true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 		</div>
 
+
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
 
+
 		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/jquery.min.js"></script>
+		<script src="${js}/jquery-3.2.1.min.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
+		<script src="${js}/bootstrap.min.js"></script>
+		
 		<!-- Custom coded JavaScript -->
 		<script src="${js}/myapp.js"></script>
 		<script src="${js}/jquery.js"></script>
