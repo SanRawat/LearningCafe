@@ -57,3 +57,8 @@ ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
 }
+
+.dataTableImg{
+	height:100px;
+	width:100px;
+}

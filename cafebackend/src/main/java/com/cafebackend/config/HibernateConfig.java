@@ -1,7 +1,9 @@
 package com.cafebackend.config;
 
 import java.util.Properties;
+
 import javax.sql.DataSource;
+
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
@@ -12,14 +14,14 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-//@ComponentScan(basePackages = {"com.cafebackend.dto"})
+@ComponentScan(basePackages = { "com.cafebackend.dto" })
 @EnableTransactionManagement
 public class HibernateConfig {
 
 	// Change the below based on the DBMS you choose
 	private final static String DATABASE_URL = "jdbc:mysql://localhost/organicvegetable?useSSL=false";
 	private final static String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
-	private final static String DATABASE_DIALECT = "org.hibernate.dialect.MySQLDialect";
+	private final static String DATABASE_DIALECT = "org.hibernate.dialect.MySQL5Dialect";
 	private final static String DATABASE_USERNAME = "root";
 	private final static String DATABASE_PASSWORD = "root";
 
@@ -62,7 +64,7 @@ public class HibernateConfig {
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
 
-		// properties.put("hibernate.hbm2ddl.auto", "create");
+		properties.put("hibernate.hbm2ddl.auto", "update");
 
 		return properties;
 	}

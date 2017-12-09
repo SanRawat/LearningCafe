@@ -20,14 +20,25 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>${title} | LearningCafe</title>
+<title>${title}|LearningCafe</title>
 <script>
 	window.menu = '${titile}';
+	window.contextRoot = '${contextRoot}';
 </script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 <link href="${css}/bootstrap-theme.css" rel="stylesheet">
+
+<!-- fontawesome -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Jquery DataTables CSS -->
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.css" />
+
+
+
 <!-- Custom styles for this template -->
 <link href="${css }/myapp.css" rel="stylesheet">
 
@@ -50,24 +61,36 @@
 			<c:if test="${userClickContact == true}">
 				<%@include file="contact.jsp"%>
 			</c:if>
-			<c:if test="${userClickCategoryProducts == true or userClickAllProducts == true}">
+			<c:if
+				test="${userClickCategoryProducts == true or userClickAllProducts == true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
+			<c:if test="${userClickShowProduct == true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
+			
 		</div>
 
 
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
 
+		<!-- Jquery core JavaScript -->
+		<script src="${js}/jquery-3.2.1.min.js"></script>
 
 		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/jquery-3.2.1.min.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
-		<script src="${js}/bootstrap.min.js"></script>
-		
+
+		<!-- Jquery DataTable plugin -->
+		 <script src="${js}/jquery.dataTables.js"></script> 
+
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.js"></script>
+
+
 		<!-- Custom coded JavaScript -->
 		<script src="${js}/myapp.js"></script>
-		<script src="${js}/jquery.js"></script>
+
 	</div>
 </body>
 

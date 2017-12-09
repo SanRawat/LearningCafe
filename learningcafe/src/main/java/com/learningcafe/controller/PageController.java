@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cafebackend.dao.CategoryDAO;
+import com.cafebackend.dao.ProductDAO;
 import com.cafebackend.dto.Category;
+import com.cafebackend.dto.Product;
+import com.learningcafe.exception.ProductNotFoundException;
 
 
 @Controller
@@ -16,6 +19,8 @@ public class PageController {
 	@Autowired
 	private CategoryDAO categoryDAO;
 
+	@Autowired
+	private ProductDAO productDAO;
 	
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
@@ -82,5 +87,33 @@ public class PageController {
 		mv.addObject("userClickCategoryProducts",true);
 		return mv;				
 	}	
+	
+	// show single product
+	
+	@RequestMapping(value = {"/show/{id}/product"}) // do not use ${}
+	public ModelAndView showSingleProduct(@PathVariable("id") int id) throws ProductNotFoundException{		
+		ModelAndView mv = new ModelAndView("page");
+		
+		// categoryDAO to fetch a single category
+		
+		
+		 Product product = productDAO.get(id);
+		 if(product == null) throw new ProductNotFoundException();
+		//updating the views count
+		product.setViews(product.getViews()+1);
+		productDAO.update(product);
+		
+		
+		mv.addObject("title",product.getName());
+		
+		// passing the single product object
+		mv.addObject("product", product);
+		
+		mv.addObject("userClickShowProduct",true);
+		return mv;				
+	}	
+	
+	
+	
 
 }
