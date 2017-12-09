@@ -34,11 +34,10 @@ $(function() {
 
 });
 
-// execute the code where we have this table
 
-// create datatable for jquery
 
-// create dataset
+// execute the code where we have this table 'listProducttable'
+
 
 
 $(document)
