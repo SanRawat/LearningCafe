@@ -111,7 +111,8 @@ CREATE TABLE cart_line (
 	product_count int,
 	buying_price DECIMAL(10,2),
 	is_available boolean,
-	CONSTRAINT fk_cartline_product_id FOREIGN KEY (product_id ) REFERENCES product (id),
+	FOREIGN KEY (cart_id ) REFERENCES cart(id),
+	FOREIGN KEY (product_id ) REFERENCES product(id),
 	CONSTRAINT pk_cartline_id PRIMARY KEY (id)
 );
 
@@ -152,3 +153,8 @@ INSERT INTO cart (user_id, grand_total, cart_lines) VALUES (4, 0, 0);
 
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('PRDDEF123DEFX', 'Samsung s7', 'samsung', 'A smart phone by samsung!', 32000, 0, true, 3, 3, 0, 0 );
+
+
+ALTER TABLE product
+MODIFY COLUMN code varchar(100);
+

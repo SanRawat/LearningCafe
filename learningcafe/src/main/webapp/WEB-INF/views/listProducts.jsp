@@ -10,7 +10,7 @@
 
 			<!--   to display actual products -->
 
-			<div class="col-md-9">
+			<div class="col-md-9 w3-responsive">
 				<!-- added breadcrumb component -->
 				<div class="row">
 
@@ -41,30 +41,32 @@
 
 					<!-- to display the actual products -->
 
-					<div class="row">
+					<div style="overflow: auto;" >
 
-						<div class="col-xs-12">
-							<table id="productListTable"
-								class="table table-striped table-borderd">
-								<thead>
-									<tr>
-										<th></th>
-										<th>Name</th>
-										<th>Brand</th>
-										<th>Price</th>
-										<th>Qty. Available</th>
-										<th></th>
-									</tr>
+						<div class="col-xs-12 ">
 
-								</thead>
+							
+								<div >
+									<table id="productListTable"
+										class="table table-striped table-borderd">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Name</th>
+												<th>Brand</th>
+												<th>Price</th>
+												<th>Qty. Available</th>
+												<th></th>
+											</tr>
 
+										</thead>
 
+									</table>
 
+								</div>
 
+							</div>
 
-							</table>
-
-						</div>
 
 					</div>
 
